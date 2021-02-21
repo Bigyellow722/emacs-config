@@ -14,7 +14,7 @@
 (use-package crux
   :bind (("C-S-k" . crux-smart-kill-line)
 	 ("C-a" . crux-move-beginning-of-line)
-	 ("C-x ," . crux-fiind-user-init-file)
+	 ("C-x ," . crux-find-user-init-file)
 	 ("C-c ^" . crux-top-join-line)))
 
 ;; delete space region
@@ -56,8 +56,17 @@
   :config (setq swiper-action-recenter t
 		swiper-include-line-number-in-search t))
 
-;;
+;; syntax check
 (use-package flycheck
   :hook (after-init . global-flycheck-mode))
 
+;;
+(use-package which-key
+  :defer nil
+  :config (which-key-mode))
+
+(use-package ace-window
+  :bind (("M-o" . 'ace-window)))
+
 (provide 'init-package)
+;;; init-package.el ends here
