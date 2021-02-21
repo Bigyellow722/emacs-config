@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (counsel ivy drag-stuff hungry-delete crux benchmark-init use-package smart-mode-line restart-emacs gruvbox-theme)))
+    (flycheck counsel ivy drag-stuff hungry-delete crux benchmark-init use-package smart-mode-line restart-emacs gruvbox-theme)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

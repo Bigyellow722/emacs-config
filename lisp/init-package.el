@@ -1,4 +1,6 @@
-
+;;; init-package.el --- setting fo package
+;;; Commentary:
+;;; Code:
 
 ;; restart-emacs
 (use-package restart-emacs)
@@ -10,7 +12,10 @@
 
 ;; delete line
 (use-package crux
-  :bind ("C-c k" . crux-smart-kill-line))
+  :bind (("C-S-k" . crux-smart-kill-line)
+	 ("C-a" . crux-move-beginning-of-line)
+	 ("C-x ," . crux-fiind-user-init-file)
+	 ("C-c ^" . crux-top-join-line)))
 
 ;; delete space region
 (use-package hungry-delete
@@ -51,6 +56,8 @@
   :config (setq swiper-action-recenter t
 		swiper-include-line-number-in-search t))
 
-
+;;
+(use-package flycheck
+  :hook (after-init . global-flycheck-mode))
 
 (provide 'init-package)
