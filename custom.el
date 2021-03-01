@@ -4,8 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (ace-window which-key flycheck counsel ivy drag-stuff hungry-delete crux benchmark-init use-package smart-mode-line restart-emacs gruvbox-theme)))
+   '(ace-window which-key flycheck counsel ivy drag-stuff hungry-delete crux benchmark-init use-package smart-mode-line restart-emacs gruvbox-theme))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -17,6 +17,7 @@
 (require 'init-package)
 (require 'init-ui)
 (require 'init-mit-scheme)
+(require 'init-common-lisp)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
