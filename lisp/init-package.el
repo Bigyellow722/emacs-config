@@ -65,8 +65,14 @@
   :defer nil
   :config (which-key-mode))
 
+;; for switching windows
 (use-package ace-window
   :bind (("M-o" . 'ace-window)))
+
+;; for git
+(use-package magit
+  :ensure t)
+
 
 (provide 'init-package)
 ;;; init-package.el ends here
