@@ -22,7 +22,11 @@
     ))
 
 ;; line number
-;;(setq display-line-numbers-type 'relative)
-;;(global-display-line-numbers-mode t)
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode t)
+
+;; change cursor
+(setq cursor-type 'bar)
+
 
 (provide 'init-ui)
