@@ -18,6 +18,7 @@
 (require 'init-ui)
 (require 'init-mit-scheme)
 (require 'init-common-lisp)
+(require 'init-c-mode)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
