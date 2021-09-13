@@ -19,6 +19,7 @@
 (require 'init-mit-scheme)
 (require 'init-common-lisp)
 (require 'init-c-mode)
+(require 'init-org-mode)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))

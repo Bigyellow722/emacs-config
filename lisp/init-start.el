@@ -14,7 +14,8 @@
 ;; disable toolbar
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-
+;; Enable transient mark mode
+(transient-mark-mode 1)
 
 
 (provide 'init-start)

@@ -4,8 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(counsel-gtags magit ace-window which-key flycheck counsel ivy drag-stuff hungry-delete crux benchmark-init use-package smart-mode-line restart-emacs gruvbox-theme))
- '(show-paren-mode t))
+   (quote
+    (counsel-gtags magit which-key use-package smart-mode-line restart-emacs hungry-delete gruvbox-theme flycheck drag-stuff crux counsel benchmark-init ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
