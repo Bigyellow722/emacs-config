@@ -7,8 +7,10 @@
   (setq c-basic-offset 4
 	indent-tabs-mode t
 	default-tab-width 4)
-  (when (derived-mode-p 'c-mode 'c++-mode)
-    (ggtags-mode 1)))
+;;  (when (derived-mode-p 'c-mode 'c++-mode)
+  ;;    (ggtags-mode 1))
+  (gtags-mode 1)
+  )
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 ;;; configure for indent end
 
