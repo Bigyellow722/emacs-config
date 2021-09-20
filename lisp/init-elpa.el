@@ -1,7 +1,7 @@
 ;; for package archives
-(setq package-archives '(("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-			 ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+(setq package-archives '(("melpa" . "http://elpa.emacs-china.org/melpa/")
+			 ("gnu" . "http://elpa.emacs-china.org/gnu/")
+			 ("org" . "http://elpa.emacs-china.org/org/")))
 
 ;; for us-package
 ;; initialize package

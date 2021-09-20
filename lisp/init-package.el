@@ -74,10 +74,10 @@
   :ensure t)
 
 ;; for gtags
-(use-package counsel-gtags
-  :bind-keymap ("C-c t" . counsel-gtags-command-map)
-  :config
-  (counsel-gtags-mode 1))
+;;(use-package counsel-gtags
+;;  :bind-keymap ("C-c t" . counsel-gtags-command-map)
+;;  :config
+;;  (counsel-gtags-mode 1))
 
 (provide 'init-package)
 ;;; init-package.el ends here
