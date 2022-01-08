@@ -9,6 +9,7 @@
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
 (add-to-list 'load-path "/home/wqy/global-6.6.4")
 (autoload 'gtags-mode "gtags" "" t)
+(setq gtags-suggested-key-mapping t)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
