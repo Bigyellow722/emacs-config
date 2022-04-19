@@ -8,6 +8,6 @@
 (show-paren-mode 1)
 
 ;; set name of scheme implementaion
-(setq scheme-program-name "/usr/bin/mit-scheme")
+(setq scheme-program-name "scheme")
 
 (provide 'init-mit-scheme)
