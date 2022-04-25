@@ -2,14 +2,24 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; configure for indent
+;;; configure for gtags
+(defun gtags-config ()
+  (progn
+    (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
+    (add-to-list 'load-path "/home/wqy/global-6.6.4")
+    (autoload 'gtags-mode "gtags" "" t)
+    (setq gtags-suggested-key-mapping t)))
+
+;;; configure for cscope
+(defun cscope-config ()
+  (require 'xcscope))
+;;; configure for my c mode
 (defun my-c-mode-hook ()
   (setq c-basic-offset 4
 	indent-tabs-mode t
 	default-tab-width 4)
-;;  (when (derived-mode-p 'c-mode 'c++-mode)
-  ;;    (ggtags-mode 1))
-  (gtags-mode 1)
+  ;;(gtags-config)
+  (cscope-config)
   )
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 ;;; configure for indent end

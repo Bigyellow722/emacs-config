@@ -73,11 +73,20 @@
 (use-package magit
   :ensure t)
 
-;; for gtags
-;;(use-package counsel-gtags
-;;  :bind-keymap ("C-c t" . counsel-gtags-command-map)
-;;  :config
-;;  (counsel-gtags-mode 1))
+;; for highlight-symbol
+(use-package highlight-symbol
+  :ensure t
+  :bind (("C-<f3>" . highlight-symbol)
+	 ("<f3>" . highlight-symbol-next)
+	 ("S-<f3>" . highlight-symbol-prev)
+	 ("M-<f3>" . highlight-symbol-query-replace)))
+
+;; for imenu-list
+(use-package imenu-list
+  :ensure t
+  :bind (("C-<f1>" . imenu-list-minor-mode)))
+
+
 
 (provide 'init-package)
 ;;; init-package.el ends here
