@@ -1,0 +1,3 @@
+[submodule "lisp/thirdparty/xcscope"]
+	path = lisp/thirdparty/xcscope
+	url = git@github.com:dkogan/xcscope.el.git

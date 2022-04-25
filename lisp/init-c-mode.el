@@ -6,13 +6,18 @@
 (defun gtags-config ()
   (progn
     (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
-    (add-to-list 'load-path "/home/wqy/global-6.6.4")
+    ;;(add-to-list 'load-path "/home/wqy/global-6.6.4")
     (autoload 'gtags-mode "gtags" "" t)
     (setq gtags-suggested-key-mapping t)))
 
+
 ;;; configure for cscope
 (defun cscope-config ()
-  (require 'xcscope))
+  (progn
+    (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/thirdparty/xcscope")))
+    (require 'xcscope)
+    (cscope-setup)
+    (setq cscope-do-not-update-database t)))
 ;;; configure for my c mode
 (defun my-c-mode-hook ()
   (setq c-basic-offset 4

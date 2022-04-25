@@ -15,7 +15,7 @@
 (require 'init-package)
 (require 'init-ui)
 (require 'init-mit-scheme)
-(require 'init-common-lisp)
+;;(require 'init-common-lisp)
 (require 'init-c-mode)
 (require 'init-org-mode)
 (require 'init-lsp)
