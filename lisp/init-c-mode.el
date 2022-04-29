@@ -6,7 +6,7 @@
 (defun gtags-config ()
   (progn
     (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
-    ;;(add-to-list 'load-path "/home/wqy/global-6.6.4")
+    (add-to-list 'load-path "/usr/local/bin")
     (autoload 'gtags-mode "gtags" "" t)
     (setq gtags-suggested-key-mapping t)))
 
@@ -15,9 +15,12 @@
 (defun cscope-config ()
   (progn
     (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/thirdparty/xcscope")))
+    (add-to-list 'load-path "/usr/local/bin")
     (require 'xcscope)
     (cscope-setup)
-    (setq cscope-do-not-update-database t)))
+    (setq cscope-do-not-update-database t)
+    (setq cscope-program "gtags-cscope")))
+
 ;;; configure for my c mode
 (defun my-c-mode-hook ()
   (setq c-basic-offset 4
@@ -28,18 +31,6 @@
   )
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 ;;; configure for indent end
-
-;;; configure for gtags
-;;(add-hook 'c-mode-hook 'counsel-gtags-mode)
-;;(add-hook 'c++-mode-hook 'counsel-gtags-mode)
-
-;;(with-eval-after-load 'counsel-gtags
-;;  (define-key counsel-gtags-mode-map (kbd "M-t") 'counsel-gtags-find-definition)
-;;  (define-key counsel-gtags-mode-map (kbd "M-r") 'counsel-gtags-find-reference)
-;;  (define-key counsel-gtags-mode-map (kbd "M-s") 'counsel-gtags-find-symbol)
-;;  (define-key counsel-gtags-mode-map (kbd "M-]") 'counsel-gtags-go-backward)
-;;  (define-key counsel-gtags-mode-map (kbd "M-[") 'counsel-gtags-go-forward)
-;;  (define-key counsel-gtags-mode-map (kbd "M-p") 'counsel-gtags-find-file))
 
 
 (provide 'init-c-mode)
