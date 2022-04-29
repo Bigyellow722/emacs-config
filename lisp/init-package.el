@@ -86,7 +86,9 @@
   :ensure t
   :bind (("C-<f1>" . imenu-list-minor-mode)))
 
-
+;; for ggtags
+(use-package ggtags
+  :ensure t)
 
 (provide 'init-package)
 ;;; init-package.el ends here

@@ -7,8 +7,9 @@
   (progn
     (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
     (add-to-list 'load-path "/usr/local/bin")
-    (autoload 'gtags-mode "gtags" "" t)
-    (setq gtags-suggested-key-mapping t)))
+    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (ggtags-mode 1))
+    ))
 
 
 ;;; configure for cscope
@@ -19,7 +20,7 @@
     (require 'xcscope)
     (cscope-setup)
     (setq cscope-do-not-update-database t)
-    ;;(setq cscope-program "gtags-cscope")
+    ;; (setq cscope-program "gtags-cscope")
     ))
 
 ;;; configure for my c mode
@@ -27,8 +28,8 @@
   (setq c-basic-offset 4
 	indent-tabs-mode t
 	default-tab-width 4)
-  ;;(gtags-config)
-  (cscope-config)
+  (gtags-config)
+  ;;(cscope-config)
   )
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 ;;; configure for indent end
