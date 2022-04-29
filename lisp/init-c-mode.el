@@ -19,7 +19,8 @@
     (require 'xcscope)
     (cscope-setup)
     (setq cscope-do-not-update-database t)
-    (setq cscope-program "gtags-cscope")))
+    ;;(setq cscope-program "gtags-cscope")
+    ))
 
 ;;; configure for my c mode
 (defun my-c-mode-hook ()
