@@ -29,6 +29,7 @@
 	indent-tabs-mode t
 	default-tab-width 4)
   (gtags-config)
+  (semantic-mode 1)
   ;;(cscope-config)
   )
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
