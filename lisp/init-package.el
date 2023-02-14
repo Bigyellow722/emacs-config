@@ -90,5 +90,10 @@
 (use-package ggtags
   :ensure t)
 
+(use-package graphviz-dot-mode
+  :ensure t
+  :config
+  (setq graphviz-dot-indent-width 4))
+
 (provide 'init-package)
 ;;; init-package.el ends here
