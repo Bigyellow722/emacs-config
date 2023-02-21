@@ -25,9 +25,9 @@
 
 ;;; configure for my c mode
 (defun my-c-mode-hook ()
-  (setq c-basic-offset 4
-	indent-tabs-mode t
-	default-tab-width 4)
+;;;  (setq c-basic-offset 4
+;;;     indent-tabs-mode t
+;;;	default-tab-width 4)
   (gtags-config)
   (semantic-mode 1)
   ;;(cscope-config)
