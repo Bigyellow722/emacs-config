@@ -95,5 +95,8 @@
   :config
   (setq graphviz-dot-indent-width 4))
 
+(use-package geiser-guile
+  :ensure t)
+
 (provide 'init-package)
 ;;; init-package.el ends here
