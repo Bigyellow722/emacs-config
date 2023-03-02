@@ -8,6 +8,7 @@
 	sml/theme 'respectful)
   (sml/setup))
 
+
 ;; fix font
 (use-package emacs
   :if (display-graphic-p)
@@ -18,7 +19,7 @@
 	(dolist (charset '(kana han symbol cjk-misc bopomofo))
 	  (set-fontset-font (frame-parameter nil 'font)
 			    charset (font-spec :family "Microsoft Yahei Mono" :size 12))))
-    ;;(set-face-attribute 'default nil :font "Source Code Pro for Powerline 11")
+    (set-face-attribute 'default nil :height 130)
     ))
 
 ;; line number
