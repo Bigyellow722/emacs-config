@@ -5,7 +5,12 @@
 (add-hook 'org-mode-hook
 	  (lambda()
 	    (setq truncate-lines nil)
-	    (imenu-add-to-menubar "Imenu")))
+	    (imenu-add-to-menubar "Imenu")
+	    ))
+
+(org-babel-do-load-languages
+	     'org-babel-load-languages
+	     '((dot . t)))
 
 (require 'org-tempo)
 
