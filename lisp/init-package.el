@@ -98,5 +98,9 @@
 (use-package geiser-guile
   :ensure t)
 
+(use-package rg
+  :init
+  (rg-enable-default-bindings))
+
 (provide 'init-package)
 ;;; init-package.el ends here
