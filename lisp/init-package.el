@@ -102,5 +102,9 @@
   :init
   (rg-enable-default-bindings))
 
+(use-package rime
+  :custom
+  (default-input-method "rime"))
+
 (provide 'init-package)
 ;;; init-package.el ends here
