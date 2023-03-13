@@ -104,7 +104,11 @@
 
 (use-package rime
   :custom
-  (default-input-method "rime"))
+  (default-input-method "rime")
+  :config
+  (setq rime-user-data-dir "~/.config/fcitx/rime"))
+
+(use-package yaml-mode)
 
 (provide 'init-package)
 ;;; init-package.el ends here

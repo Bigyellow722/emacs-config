@@ -13,8 +13,13 @@
 
 ** Prerequement
 
+*** rime
+
 *ARCHLINUX*
 
 #+begin_src shell
   sudo pacman -S librime  
 #+end_src
+
+*reference*
+[[https://manateelazycat.github.io/emacs/2020/03/22/emacs-rime.html][the rime configurarion in local machine]]
