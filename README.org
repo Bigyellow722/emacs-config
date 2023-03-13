@@ -1,0 +1,20 @@
+* FEATURE
+
+- Linux developement environment
+- gnu guile development environment
+- python environment
+- graphviz support
+- a simple org-mode configuration
+- magit
+- emacs-rime
+
+
+* INSTALL
+
+** Prerequement
+
+*ARCHLINUX*
+
+#+begin_src shell
+  sudo pacman -S librime  
+#+end_src
