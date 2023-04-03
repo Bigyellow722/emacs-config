@@ -9,7 +9,7 @@
 	  (c-mode . "linux")
 	  (other . "gnu")))
 
-(when treesit-available-p
+(when (treesit-available-p)
   (progn
     (require 'treesit)
     (add-to-list 'major-mode-remap-alist
@@ -44,7 +44,7 @@
   ;;(cscope-config)
   )
 ;;; (add-hook 'c-mode-common-hook 'my-c-mode-hook)
-(if treesit-function-p
+(if (treesit-available-p)
     (add-hook 'c-ts-mode-hook #'my-c-mode-hook)
   (add-hook 'c-mode-common-hook 'my-c-mode-hook))
 
