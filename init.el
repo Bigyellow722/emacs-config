@@ -8,11 +8,6 @@
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(setq c-default-style
-	'((java-mode . "java")
-	  (awk-mode . "awk")
-	  (c-mode . "linux")
-	  (other . "gnu")))
 
 (require 'init-const)
 (require 'init-kbd)
