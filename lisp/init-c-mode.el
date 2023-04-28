@@ -9,11 +9,12 @@
 	  (c-mode . "linux")
 	  (other . "gnu")))
 
-(when (treesit-available-p)
-  (progn
-    (require 'treesit)
-    (add-to-list 'major-mode-remap-alist
-		 '(c-mode . c-ts-mode))))
+(if (> emacs-major-version 28)
+    (when (treesit-available-p)
+      (progn
+	(require 'treesit)
+	(add-to-list 'major-mode-remap-alist
+		     '(c-mode . c-ts-mode)))))
 
 ;;; configure for gtags
 (defun gtags-config ()
@@ -44,9 +45,10 @@
   ;;(cscope-config)
   )
 ;;; (add-hook 'c-mode-common-hook 'my-c-mode-hook)
-(if (treesit-available-p)
-    (add-hook 'c-ts-mode-hook #'my-c-mode-hook)
-  (add-hook 'c-mode-common-hook 'my-c-mode-hook))
-
+(if (> emacs-major-version 28)
+    (if (treesit-available-p)
+        (add-hook 'c-ts-mode-hook #'my-c-mode-hook)
+        (add-hook 'c-mode-common-hook 'my-c-mode-hook))
+    (add-hook 'c-mode-common-hook 'my-c-mode-hook))
 (provide 'init-c-mode)
 ;;; init-c-mode.el ends here
