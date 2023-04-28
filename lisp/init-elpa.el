@@ -1,7 +1,8 @@
 ;; for package archives
 (setq package-archives '(("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
 			 ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+			 ;;;("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+			 ("org" . "http://1.15.88.122/org/")
 			 ("melpa" . "https://melpa.org/packages/")
 			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 
