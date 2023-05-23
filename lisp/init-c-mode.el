@@ -14,7 +14,8 @@
       (progn
 	(require 'treesit)
 	(add-to-list 'major-mode-remap-alist
-		     '(c-mode . c-ts-mode)))))
+		     '(c-mode . c-ts-mode))
+	(add-to-list 'auto-mode-alist '("\\.h\\'" . c-ts-mode)))))
 
 ;;; configure for gtags
 (defun gtags-config ()
