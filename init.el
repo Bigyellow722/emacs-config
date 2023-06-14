@@ -21,6 +21,7 @@
 (require 'init-org-mode)
 (require 'init-lsp)
 (require 'init-python-mode)
+(require 'init-asm-mode)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
