@@ -2,20 +2,20 @@
 
 
 ;;; common config
-(setq common-plugins-setting ())
+(setq-default common-plugins-setting ())
 
 (defun add-plugins-for-common (code)
   (push code common-plugins-setting))
 
 
 ;;; only for gui mode
-(setq gui-only-plugins-setting ())
+(setq-default gui-only-plugins-setting ())
 
 (defun add-plugins-for-gui (code)
   (push code gui-only-plugins-setting))
 
 ;;; only for tui mode
-(setq tui-only-plugins-setting ())
+(setq-default tui-only-plugins-setting ())
 
 (defun add-plugins-for-tui (code)
   (push code tui-only-plugins-setting))
