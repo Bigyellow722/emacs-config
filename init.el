@@ -19,6 +19,7 @@
 ;;(require 'init-common-lisp)
 (require 'init-c-mode)
 (require 'init-org-mode)
+(require 'init-org-roam)
 (require 'init-lsp)
 (require 'init-python-mode)
 (require 'init-asm-mode)
