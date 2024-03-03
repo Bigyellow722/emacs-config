@@ -23,6 +23,7 @@
 (require 'init-lsp)
 (require 'init-python-mode)
 (require 'init-asm-mode)
+(require 'init-org-roam)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
