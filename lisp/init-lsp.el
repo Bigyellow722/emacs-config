@@ -1,14 +1,10 @@
 
 
-(use-package lsp-mode
-  :init
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-c l")
-  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (python-mode . lsp-deferred)
-         ;; if you want which-key integration
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp lsp-deferred)
-
+(use-package eglot
+  :config
+  (add-to-list 'eglot-server-programs `((c-mode c++-mode c-ts-mode c++-ts-mode)  "clangd"))
+  (add-hook 'c++-mode-hook 'eglot-ensure)
+  (add-hook 'c-mode-hook 'eglot-ensure)
+)
 
 (provide 'init-lsp)

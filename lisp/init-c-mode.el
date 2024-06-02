@@ -40,7 +40,7 @@
 
 ;;; configure for my c mode
 (defun my-c-mode-hook ()
-  (gtags-config)
+  ;;(gtags-config)
   (semantic-mode 1)
   (setq c-ts-mode-indent-style 'linux)
   ;;(cscope-config)

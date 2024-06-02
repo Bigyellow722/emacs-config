@@ -15,19 +15,20 @@
 (require 'init-elpa)
 (require 'init-package)
 (require 'init-ui)
+(require 'init-lsp)
 (require 'init-mit-scheme)
 ;;(require 'init-common-lisp)
 (require 'init-c-mode)
 (require 'init-org-mode)
-(require 'init-org-roam)
-(require 'init-lsp)
 (require 'init-python-mode)
 (require 'init-asm-mode)
 (require 'init-org-roam)
+(require 'init-plant-uml)
+(require 'init-vterm)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
 
-
+;;; init.el ends here
 
 
