@@ -18,6 +18,9 @@
 	(add-to-list 'auto-mode-alist '("\\.h\\'" . c-ts-mode)))))
 
 ;;; configure for gtags
+(defvar ggtags-auto-enable nil
+  "Whether ggtags-mode is enabled in 'c-mode'.")
+
 (defun gtags-config ()
   (progn
     (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
@@ -25,6 +28,28 @@
     (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'c-ts-mode 'c++-ts-mode)
               (ggtags-mode 1))
     ))
+
+(defun ggtags-mode-disable-for-all-c-files ()
+  "Disable ggtags-mode for all opened c files."
+  (dolist (buffer (buffer-list))
+    (with-current-buffer buffer
+      (when (derived-mode-p 'c-ts-mode)
+	(ggtags-mode -1)))))
+
+(defun ggtags-mode-trigger ()
+  "Trigger ggtags-mode automatically."
+  (interactive)
+  (if ggtags-auto-enable
+      (progn
+	(remove-hook 'c-ts-mode-hook #'gtags-config)
+	(ggtags-mode-disable-for-all-c-files)
+	(setq ggtags-auto-enable nil)
+	(message "ggtags-auto-enable is disable"))
+    (progn
+      (ggtags-mode 1)
+      (add-hook 'c-ts-mode-hook #'gtags-config)
+      (setq ggtags-auto-enable t)
+      (message "ggtags-auto-enable is enable"))))
 
 
 ;;; configure for cscope
