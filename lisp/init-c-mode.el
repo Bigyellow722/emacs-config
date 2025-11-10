@@ -33,7 +33,7 @@
   "Disable ggtags-mode for all opened c files."
   (dolist (buffer (buffer-list))
     (with-current-buffer buffer
-      (when (derived-mode-p 'c-ts-mode)
+      (when (derived-mode-p 'c-mode 'c++-mode 'c-ts-mode 'c++-ts-mode)
 	(ggtags-mode -1)))))
 
 (defun ggtags-mode-trigger ()
@@ -41,13 +41,15 @@
   (interactive)
   (if ggtags-auto-enable
       (progn
+	(remove-hook 'c-mode-hook #'gtags-config)
 	(remove-hook 'c-ts-mode-hook #'gtags-config)
 	(ggtags-mode-disable-for-all-c-files)
 	(setq ggtags-auto-enable nil)
 	(message "ggtags-auto-enable is disable"))
     (progn
-      (ggtags-mode 1)
+      (add-hook 'c-mode-hook #'gtags-config)
       (add-hook 'c-ts-mode-hook #'gtags-config)
+      (gtags-config)
       (setq ggtags-auto-enable t)
       (message "ggtags-auto-enable is enable"))))
 
