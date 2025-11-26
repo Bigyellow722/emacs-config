@@ -1,3 +1,9 @@
 [submodule "lisp/thirdparty/xcscope"]
 	path = lisp/thirdparty/xcscope
 	url = git@github.com:dkogan/xcscope.el.git
+[submodule "lisp/thirdparty/sdcv"]
+	path = lisp/thirdparty/sdcv
+	url = git@github.com:manateelazycat/sdcv.git
+[submodule "lisp/thirdparty/elf-mode"]
+	path = lisp/thirdparty/elf-mode
+	url = git@github.com:Bigyellow722/elf-mode.git
