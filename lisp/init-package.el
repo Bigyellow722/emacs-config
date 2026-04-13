@@ -110,5 +110,28 @@
 
 (use-package yaml-mode)
 
+;;(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/thirdparty/elf-mode/")))
+;;(require 'elf-mode)
+;;(elf-setup-default)
+
+;; TAB-only configuration
+(use-package corfu
+  :custom
+  (corfu-auto t)               ;; Enable auto completion
+  (corfu-preselect 'directory) ;; Select the first candidate, except for directories
+
+  :init
+  (global-corfu-mode)
+
+  :config
+  ;; Free the RET key for less intrusive behavior.
+  ;; Option 1: Unbind RET completely
+  ;; (keymap-unset corfu-map "RET")
+  ;; Option 2: Use RET only in shell modes
+  (keymap-set corfu-map "RET" `( menu-item "" nil :filter
+                                 ,(lambda (&optional _)
+                                    (and (derived-mode-p 'eshell-mode 'comint-mode)
+                                         #'corfu-send)))))
+
 (provide 'init-package)
 ;;; init-package.el ends here
