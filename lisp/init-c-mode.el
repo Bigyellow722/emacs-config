@@ -2,32 +2,42 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; configure for indent end
-(setq c-default-style
-	'((java-mode . "java")
-	  (awk-mode . "awk")
-	  (c-mode . "linux")
-	  (other . "gnu")))
+
+
+(defgroup my-c-mode-group nil
+  "Configuration only for my c mode."
+  :group 'development)
+
+(defcustom enable-ggtags nil
+  "#t means that we try to enable ggtags-mode."
+  :safe 'booleanp
+  :type 'boolean
+  :group 'my-c-mode-group)
 
 (if (> emacs-major-version 28)
     (when (treesit-available-p)
       (progn
 	(require 'treesit)
 	(add-to-list 'major-mode-remap-alist
-		     '(c-mode . c-ts-mode))
-	(add-to-list 'auto-mode-alist '("\\.h\\'" . c-ts-mode)))))
+		     '(c-mode . c-ts-mode)
+		     '(c++-mode . c++-ts-mode))
+	(add-to-list 'auto-mode-alist '("\\.h\\'" . c-ts-mode)
+		     '("\\.hpp\\'" . c++-ts-mode)))))
 
 ;;; configure for gtags
 (defvar ggtags-auto-enable nil
   "Whether ggtags-mode is enabled in 'c-mode'.")
 
 (defun gtags-config ()
+  "Enable gtags if ENABLE is #t."
   (progn
     (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
     (add-to-list 'load-path "/usr/local/bin")
     (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'c-ts-mode 'c++-ts-mode)
-              (ggtags-mode 1))
-    ))
+      (if enable-ggtags
+	  (ggtags-mode 1)
+	(ggtags-mode 0))
+    )))
 
 (defun ggtags-mode-disable-for-all-c-files ()
   "Disable ggtags-mode for all opened c files."
@@ -53,24 +63,25 @@
       (setq ggtags-auto-enable t)
       (message "ggtags-auto-enable is enable"))))
 
+(use-package hideshow
+  :ensure nil
+  :diminish hs-minor-mode
+  :bind (:map prog-mode-map
+         ("C-c TAB" . hs-toggle-hiding)
+         ("M-+" . hs-show-all))
+  :hook (prog-mode . hs-minor-mode)
+  :custom
+  (hs-special-modes-alist
+   (mapcar 'purecopy
+           '((c-mode "{" "}" "/[*/]" nil nil)
+             (c++-mode "{" "}" "/[*/]" nil nil)
+             (rust-mode "{" "}" "/[*/]" nil nil)))))
 
-;;; configure for cscope
-(defun cscope-config ()
-  (progn
-    (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/thirdparty/xcscope")))
-    (add-to-list 'load-path "/usr/local/bin")
-    (require 'xcscope)
-    (cscope-setup)
-    (setq cscope-do-not-update-database t)
-    ;; (setq cscope-program "gtags-cscope")
-    ))
-
-;;; configure for my c mode
 (defun my-c-mode-hook ()
+  "Configure for my c mode."
   ;;(gtags-config)
   (semantic-mode 1)
-  (setq c-ts-mode-indent-style 'linux)
-  ;;(cscope-config)
+  (setq c-indentation-style 'linux)
   )
 ;;; (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 (if (> emacs-major-version 28)
