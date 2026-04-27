@@ -26,7 +26,7 @@
     (eval elisp-code)))
 
 
-(require 'modus-themes)
+(use-package modus-themes)
 
 
 ;; Configure the Modus Themes' appearance
