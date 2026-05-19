@@ -14,15 +14,15 @@
   :type 'boolean
   :group 'my-c-mode-group)
 
-(if (> emacs-major-version 28)
-    (when (treesit-available-p)
-      (progn
-	(require 'treesit)
-	(add-to-list 'major-mode-remap-alist
-		     '(c-mode . c-ts-mode)
-		     '(c++-mode . c++-ts-mode))
-	(add-to-list 'auto-mode-alist '("\\.h\\'" . c-ts-mode)
-		     '("\\.hpp\\'" . c++-ts-mode)))))
+;; (if (> emacs-major-version 28)
+;;     (when (treesit-available-p)
+;;       (progn
+;; 	(require 'treesit)
+;; 	(add-to-list 'major-mode-remap-alist
+;; 		     '(c-mode . c-ts-mode)
+;; 		     '(c++-mode . c++-ts-mode))
+;; 	(add-to-list 'auto-mode-alist '("\\.h\\'" . c-ts-mode)
+;; 		     '("\\.hpp\\'" . c++-ts-mode)))))
 
 ;;; configure for gtags
 (defvar ggtags-auto-enable nil
