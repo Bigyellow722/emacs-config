@@ -25,6 +25,7 @@
 (require 'init-org-roam)
 (require 'init-plant-uml)
 (require 'init-vterm)
+(require 'init-pdf)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
