@@ -57,6 +57,8 @@
       (setq sml/no-confirm-load-theme t
 	    sml/theme 'respectful)
       (sml/setup))
+    (setq-default mode-line-format
+		  (append mode-line-format '(" GC: " (:eval (number-to-string gcs-done)) "s")))
     ))
 
 ;; Run it now (for the initial daemon frame or the current GUI)

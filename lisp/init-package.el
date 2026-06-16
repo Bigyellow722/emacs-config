@@ -10,6 +10,15 @@
   :init (benchmark-init/activate)
   :hook (after-init . benchmark-init/deactivate))
 
+(use-package gcmh
+  :ensure t
+  :config
+  ;; 可选：调整触发 GC 的空闲时间，默认 15 秒
+  ;; (setq gcmh-idle-delay 5)
+  ;; 可选：调整空闲时的 GC 阈值，默认 20 MB
+  ;; (setq gcmh-low-cons-threshold (* 20 1024 1024))
+  (gcmh-mode 1))
+
 ;; delete line
 (use-package crux
   :bind (("C-S-k" . crux-smart-kill-line)

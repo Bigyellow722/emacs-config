@@ -6,9 +6,6 @@
 (set-keyboard-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
 
-;; set gc memory
-(setq gc-cons-threshold most-positive-fixnum)
-
 ;; inhibit startup screen
 (setq inhibit-startup-screen t)
 ;; disable toolbar
