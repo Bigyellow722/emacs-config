@@ -34,7 +34,7 @@
     (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
     (add-to-list 'load-path "/usr/local/bin")
     (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'c-ts-mode 'c++-ts-mode)
-      (if enable-ggtags
+      (if ggtags-auto-enable
 	  (ggtags-mode 1)
 	(ggtags-mode 0))
     )))
@@ -45,6 +45,13 @@
     (with-current-buffer buffer
       (when (derived-mode-p 'c-mode 'c++-mode 'c-ts-mode 'c++-ts-mode)
 	(ggtags-mode -1)))))
+
+(defun ggtags-mode-enable-for-all-c-files ()
+  "Enable ggtags-mode for all opened c files."
+  (dolist (buffer (buffer-list))
+    (with-current-buffer buffer
+      (when (derived-mode-p 'c-mode 'c++-mode 'c-ts-mode 'c++-ts-mode)
+	(ggtags-mode 1)))))
 
 (defun ggtags-mode-trigger ()
   "Trigger ggtags-mode automatically."
@@ -59,7 +66,7 @@
     (progn
       (add-hook 'c-mode-hook #'gtags-config)
       (add-hook 'c-ts-mode-hook #'gtags-config)
-      (gtags-config)
+      (ggtags-mode-enable-for-all-c-files)
       (setq ggtags-auto-enable t)
       (message "ggtags-auto-enable is enable"))))
 
