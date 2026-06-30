@@ -1,0 +1,11 @@
+auto-save-list/
+custom.el
+eln-cache/
+elpa/
+eshell/
+org-roam.db
+projects
+recentf
+semanticdb/
+tramp
+transient/
