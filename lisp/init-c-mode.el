@@ -59,13 +59,17 @@
   (if ggtags-auto-enable
       (progn
 	(remove-hook 'c-mode-hook #'gtags-config)
+	(remove-hook 'c++-mode-hook #'gtags-config)
 	(remove-hook 'c-ts-mode-hook #'gtags-config)
+	(remove-hook 'c++-ts-mode-hook #'gtags-config)
 	(ggtags-mode-disable-for-all-c-files)
 	(setq ggtags-auto-enable nil)
 	(message "ggtags-auto-enable is disable"))
     (progn
       (add-hook 'c-mode-hook #'gtags-config)
+      (add-hook 'c++-mode-hook #'gtags-config)
       (add-hook 'c-ts-mode-hook #'gtags-config)
+      (add-hook 'c++-ts-mode-hook #'gtags-config)
       (ggtags-mode-enable-for-all-c-files)
       (setq ggtags-auto-enable t)
       (message "ggtags-auto-enable is enable"))))
