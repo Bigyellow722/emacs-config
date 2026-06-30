@@ -26,6 +26,7 @@
 (require 'init-plant-uml)
 (require 'init-vterm)
 (require 'init-pdf)
+(require 'init-elfeed)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
