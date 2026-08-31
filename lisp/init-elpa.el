@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; for package archives
 (setq package-archives '(
 			 ;;;("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")

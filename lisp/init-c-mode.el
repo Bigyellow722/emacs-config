@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;;; init-c-mode.el --- set for c mode
 ;;; Commentary:
 ;;; Code:

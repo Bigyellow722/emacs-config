@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; for Operation System
 (defconst *is-mac* (eq system-type 'darwin)
   "OS is Mac")

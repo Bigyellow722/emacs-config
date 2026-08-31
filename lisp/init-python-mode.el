@@ -1,4 +1,4 @@
-
+;; -*- lexical-binding: t; -*-
 (defun my-python-mode-hook ()
   (setq python-shell-interpreter "python3")
   )

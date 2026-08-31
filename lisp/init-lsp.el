@@ -1,4 +1,4 @@
-
+;; -*- lexical-binding: t; -*-
 (use-package eglot
   :config
   (add-to-list 'eglot-server-programs '((c-mode c++-mode c-ts-mode c++-ts-mode) . ("clangd"

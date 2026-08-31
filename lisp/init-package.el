@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; init-package.el --- setting fo package
 ;;; Commentary:
 ;;; Code:

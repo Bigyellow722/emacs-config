@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; package --- init org mode
 ;;; Commentary:
 ;;; Code:

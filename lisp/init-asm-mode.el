@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (defun gtags-config ()
   (progn
     (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))

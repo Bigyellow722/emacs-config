@@ -1,4 +1,4 @@
-
+;; -*- lexical-binding: t; -*-
 
 (unless (file-directory-p "~/roam-notes/")
   (progn

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;for mit-scheme
 ;; Always do syntax highlighting
 (global-font-lock-mode 1)

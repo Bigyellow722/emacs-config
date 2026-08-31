@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; init-pdf.el --- set for pdf
 ;;; Commentary:
 ;;; Code:

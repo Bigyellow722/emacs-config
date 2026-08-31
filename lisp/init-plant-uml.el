@@ -1,4 +1,4 @@
-
+;; -*- lexical-binding: t; -*-
 (use-package plantuml-mode)
 
 (setq org-plantuml-jar-path (expand-file-name (concat user-emacs-directory "plantuml-1.2024.5.jar")))

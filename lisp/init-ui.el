@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;; for theme
 
 (use-package modus-themes)
